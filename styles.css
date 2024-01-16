@@ -94,7 +94,7 @@ a {
 .announcement_text {
 	margin: 0 30px;
 	font-size: 2rem;
-	animation: animate_text 60s linear infinite;
+	animation: animate_text 30s linear infinite;
 }
 
 @keyframes animate_text {
