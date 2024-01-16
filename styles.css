@@ -19,15 +19,13 @@ a {
 	position: fixed;
 	z-index: 10;
 	padding: 0 20px 0;
-	width: 100vw;
+	width: calc(100vw - 40px);
 	top: 0;
 	left: 0;
-}
 
-.bar {
-	padding: 0 20px 0;
-	width: 100vw;
-	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .footer {
@@ -65,6 +63,7 @@ a {
 	left: 50%;
 	opacity: 0;
 	transform: translate(-50%, -50%);
+	filter: saturate(0.2);
 	transition: opacity 2s ease-in-out;
 }
 
@@ -74,6 +73,37 @@ a {
 
 .mobile_br {
 	display: none;
+}
+
+.announcement {
+	position: fixed;
+	z-index: 5;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+	background-color: black;
+	height: 4rem;
+	width: 200vw;
+
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.announcement_text {
+	margin: 0 30px;
+	font-size: 2rem;
+	animation: animate_text 60s linear infinite;
+}
+
+@keyframes animate_text {
+    from {
+      	transform: translate3d(0, 0, 0);
+    }
+    to {
+      	transform: translate3d(-100%, 0, 0);
+    }
 }
 
 @media (max-width: 500px) {
