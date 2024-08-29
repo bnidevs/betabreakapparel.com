@@ -34,6 +34,7 @@ a {
 	z-index: 10;
 	padding: 10px 20px 10px;
 	width: calc(100vw - 40px);
+	height: 5vh;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -53,6 +54,10 @@ a {
 
 .disp {
 	opacity: 1 !important;
+}
+
+.invert {
+	filter: invert(100%);
 }
 
 .pic {
@@ -95,6 +100,42 @@ a {
 	margin: 0 30px;
 	font-size: 2rem;
 	animation: animate_text 30s linear infinite;
+}
+
+.icon {
+	margin: 0;
+	padding: 0;
+	height: 40px;
+	width: 40px;
+}
+
+.mock_img {
+	max-height: 300px;
+	border-radius: 10px;
+}
+
+.mock_card {
+	display: inline-block;
+	height: 32.5vh;
+	width: 17.5vw;
+	margin: 20px;
+}
+
+.mocks_wrapper {
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	overflow-y: scroll;
+}
+
+.mocks_ctnr {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow-y: scroll;
+	height: calc(100vh - 160px);
+	width: 90vw;
 }
 
 @keyframes animate_text {
