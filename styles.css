@@ -32,7 +32,7 @@ a {
 	background-color: black;
 	position: fixed;
 	z-index: 10;
-	padding: 10px 20px 10px;
+	padding: 20px;
 	width: calc(100vw - 40px);
 	height: 5vh;
 	left: 0;
@@ -65,7 +65,7 @@ a {
 }
 
 .pic {
-	width: min(90vw, 90vh);
+	width: min(90vw, 85vh);
 	z-index: 0;
 	position: fixed;
 	top: 50%;
