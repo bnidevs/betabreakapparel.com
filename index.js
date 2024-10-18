@@ -13,15 +13,11 @@ const showi = (l, i) => {
 	})
 }
 
-const mobile_pics = document.getElementsByClassName('mobile_pic');
+const pics = document.getElementsByClassName('pic');
 
-const desktop_pics = document.getElementsByClassName('desktop_pic');
-
-showi(mobile_pics, t);
-showi(desktop_pics, t);
+showi(pics, t);
 
 setInterval(() => {
 	t++;
-	showi(mobile_pics, t);
-	showi(desktop_pics, t);
+	showi(pics, t);
 }, 8000);
