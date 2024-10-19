@@ -21,3 +21,20 @@ setInterval(() => {
 	t++;
 	showi(pics, t);
 }, 8000);
+
+let show_links = false;
+
+document.getElementById('burger').addEventListener('click', () => {
+	const link_elements = [...document.getElementsByClassName('links')];
+	console.log(link_elements);
+	show_links = !show_links;
+	if(show_links){
+		link_elements.map((e) => {
+			e.classList.add('disp');
+		});
+	}else{
+		link_elements.map((e) => {
+			e.classList.remove('disp');
+		});
+	}
+});

@@ -14,14 +14,19 @@ a {
 	color: inherit;
 }
 
+h1 {
+	font-weight: 400;
+}
+
 .header {
 	background-color: black;
 	position: fixed;
 	z-index: 10;
 	padding: 0 20px 0;
-	width: calc(100vw - 40px);
+	width: min(90vw, 85vh);
 	top: 0;
-	left: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
 
 	display: flex;
 	align-items: center;
@@ -38,6 +43,44 @@ a {
 	left: 0;
 	right: 0;
 	bottom: 0;
+}
+
+.spacer {
+	height: 1rem;
+}
+
+#burger {
+	background-color: transparent;
+	border: none;
+	height: 3rem;
+	cursor: pointer;
+}
+
+#burger:hover {
+	opacity: 0.5;
+}
+
+#linklist_shadow {
+	width: min(27vw, 25.5vh);
+	height: min(90vw, 85vh);
+	z-index: 5;
+	background: linear-gradient(270deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 100%);
+}
+
+#linklist {
+	z-index: 10;
+	padding: clamp(min(1vh, 1vw), 40px, min(3vh, 3vw)) clamp(min(1vh, 1vw), 20px, min(3vh, 3vw)) 0;
+	text-align: right;
+	font-size: 2rem;
+}
+
+.links {
+	position: fixed;
+	top: -1px;
+	right: -1px;
+	margin: 0;
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
 }
 
 .row {
@@ -64,14 +107,21 @@ a {
 	filter: invert(100%);
 }
 
-.pic {
+.pic_container {
 	width: min(90vw, 85vh);
+	height: min(90vw, 85vh);
 	z-index: 0;
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	opacity: 0;
 	transform: translate(-50%, -50%);
+}
+
+.pic {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
 /*	filter: saturate(0.2);*/
 	transition: opacity 2s ease-in-out;
 }
@@ -140,6 +190,13 @@ a {
 	overflow-y: scroll;
 	height: calc(100vh - 160px);
 	width: 90vw;
+}
+
+.center_text {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 @keyframes animate_text {
