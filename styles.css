@@ -56,7 +56,7 @@ h1 {
 	cursor: pointer;
 }
 
-#burger:hover {
+#burger:hover, #burger:active {
 	opacity: 0.5;
 }
 
@@ -69,9 +69,11 @@ h1 {
 
 #linklist {
 	z-index: 10;
-	padding: clamp(min(1vh, 1vw), 40px, min(3vh, 3vw)) clamp(min(1vh, 1vw), 20px, min(3vh, 3vw)) 0;
+	padding: 0 20px 0;
 	text-align: right;
 	font-size: 2rem;
+	top: 50%;
+	transform: translate(0, -50%);
 }
 
 .links {
@@ -81,6 +83,10 @@ h1 {
 	margin: 0;
 	opacity: 0;
 	transition: opacity 0.2s ease-in-out;
+}
+
+.link:hover, .link:active {
+	opacity: 0.5;
 }
 
 .row {
@@ -126,8 +132,121 @@ h1 {
 	transition: opacity 2s ease-in-out;
 }
 
-.mobile_pic {
+#product_row {
+	display: flex;
+	align-items: center;
+	height: min(90vw, 85vh);
+	width: 100vw;
+	position: fixed;
+	z-index: 0;
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+	overflow-x: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#product_row::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.polaroid_stack {
+  	display: grid;
+	transition: filter 1s ease-in-out, transform 0.5s ease-in-out;
+	z-index: 5;
+}
+
+.polaroid_border {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+	margin-left: 5vw;
+
+	transition: transform 0.5s ease-in-out;
+
+	grid-column: 1;
+	grid-row: 1;
+	box-shadow: 2.4px 4.8px 4.8px hsl(0deg 0% 0% / 0.43);
+}
+
+.polaroid {
+	position: relative;
+	width: min(81vw, 38.25vh);
+	margin: min(6vw, 2.8333vh) min(6vw, 2.8333vh) 0;
+	overflow-y: hidden;
+	z-index: 5;
+}
+
+.shirt_name {
+	font-family: "Lacquer", system-ui;
+	font-size: 2em;
+	color: black;
+	margin: 20px;
+}
+
+.front_product_row_spacer {
+	min-width: 50px;
+	height: 1px;
+}
+
+.product_row_spacer {
+	min-width: calc(100vw - 5vw - min(40.5vw, 38.25vh) - min(3vw, 2.8333vh));
+	height: 1px;
+}
+
+#product_info {
+	position: absolute;
+	top: 40vh;
+	left: 50vw;
+	opacity: 0;
+	transition: all 0.1s ease-in-out;
+}
+
+.switch_field {
+	display: flex;
+}
+
+.switch_field input {
 	display: none;
+}
+
+.switch_field label {
+	background-color: black;
+	color: white;
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	margin-right: -1px;
+	border: 5px solid white;
+	transition: all 0.1s ease-in-out;
+}
+
+.switch_field label:hover {
+	cursor: pointer;
+}
+
+.switch_field input:checked + label {
+	background-color: white;
+	color: black;
+}
+
+#atc {
+	font-family: "Silkscreen", sans-serif;
+	background-color: black;
+	color: white;
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	margin: 10px -1px 0;
+	border: 5px solid white;
+}
+
+.blur {
+	filter: blur(5px);
 }
 
 .mobile_br {

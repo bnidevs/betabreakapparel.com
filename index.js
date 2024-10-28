@@ -38,3 +38,5 @@ document.getElementById('burger').addEventListener('click', () => {
 		});
 	}
 });
+
+document.addEventListener("touchstart", function() {}, true);
