@@ -145,6 +145,7 @@ h1 {
 	left: 0;
 	transform: translate(0, -50%);
 	overflow-x: scroll;
+	overflow-y: hidden;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
@@ -284,35 +285,6 @@ h1 {
 	width: 40px;
 }
 
-.mock_img {
-	max-height: 300px;
-	border-radius: 10px;
-}
-
-.mock_card {
-	display: inline-block;
-	height: 32.5vh;
-	width: 17.5vw;
-	margin: 20px;
-}
-
-.mocks_wrapper {
-	width: fit-content;
-	margin-left: auto;
-	margin-right: auto;
-	overflow-y: scroll;
-}
-
-.mocks_ctnr {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	overflow-y: scroll;
-	height: calc(100vh - 160px);
-	width: 90vw;
-}
-
 .center_text {
 	position: fixed;
 	top: 50%;
@@ -332,5 +304,9 @@ h1 {
 @media (max-width: 500px) {
 	.mobile_br {
 		display: block;
+	}
+
+	.mobile_product_row {
+		padding: 10vh 0 0;
 	}
 }
