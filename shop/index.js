@@ -41,7 +41,7 @@ product_polaroids.map((e) => {
 			ec.style.transform = `rotate(${r++ * 10}deg)`;
 		});
 
-		const offset = window.screen.width >= 500 ? 50 : -2 * (i + 2);
+		const offset = window.screen.width >= 500 ? 50 : -10;
 
 		product_row.scrollTo({
 			left: e.getBoundingClientRect().left + product_row.scrollLeft - offset,
