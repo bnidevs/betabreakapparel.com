@@ -140,7 +140,7 @@ h1 {
 	height: min(90vw, 85vh);
 	width: 100vw;
 	position: fixed;
-	z-index: 0;
+	z-index: 50;
 	top: 50%;
 	left: 0;
 	transform: translate(0, -50%);
@@ -157,7 +157,6 @@ h1 {
 .polaroid_stack {
   	display: grid;
 	transition: filter 1s ease-in-out, transform 0.5s ease-in-out;
-	z-index: 5;
 }
 
 .polaroid_border {
@@ -179,7 +178,6 @@ h1 {
 	width: min(81vw, 38.25vh);
 	margin: min(6vw, 2.8333vh) min(6vw, 2.8333vh) 0;
 	overflow-y: hidden;
-	z-index: 5;
 }
 
 .shirt_name {
