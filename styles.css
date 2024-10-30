@@ -333,11 +333,7 @@ h1 {
 		display: block;
 	}
 
-	.mobile_pic {
-		display: block;
-	}
-
-	.desktop_pic {
-		display: none;
+	#burger {
+		margin-right: -5vw;
 	}
 }
