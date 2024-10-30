@@ -53,6 +53,7 @@ h1 {
 	background-color: transparent;
 	border: none;
 	height: 3rem;
+	width: 4rem;
 	cursor: pointer;
 	justify-self: end;
 }
@@ -331,9 +332,5 @@ h1 {
 @media (max-width: 500px) {
 	.mobile_br {
 		display: block;
-	}
-
-	#burger {
-		margin-right: -5vw;
 	}
 }
