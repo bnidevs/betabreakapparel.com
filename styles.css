@@ -54,6 +54,7 @@ h1 {
 	border: none;
 	height: 3rem;
 	cursor: pointer;
+	justify-self: end;
 }
 
 #burger:hover, #burger:active {
