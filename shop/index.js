@@ -18,7 +18,7 @@ product_polaroids.map((e) => {
 
 		selected = e;
 		e.style.zIndex = 100;
-		product_info.style.opacity = 1;
+		//product_info.style.opacity = 1;
 
 		let k = 0;
 		product_polaroids.map((other) => {
