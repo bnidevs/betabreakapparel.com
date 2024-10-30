@@ -309,4 +309,8 @@ h1 {
 	.mobile_product_row {
 		padding: 10vh 0 0;
 	}
+
+	.front_product_row_spacer {
+		min-width: 80px;
+	}
 }
