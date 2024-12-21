@@ -41,13 +41,19 @@ product_polaroids.map((e) => {
 			ec.style.transform = `rotate(${r++ * 10}deg)`;
 		});
 
-		const offset = window.screen.width >= 500 ? 50 : -10;
-
-		product_row.scrollTo({
-			left: e.getBoundingClientRect().left + product_row.scrollLeft - offset,
-			top: 0,
-			behavior: 'smooth'
-		});
+		if (window.screen.width >= 500) {
+			product_row.scrollTo({
+				left: e.getBoundingClientRect().left + product_row.scrollLeft - 50,
+				top: 0,
+				behavior: 'smooth'
+			});
+		} else {
+			product_row.scrollBy({
+				left: e.getBoundingClientRect().left - (window.innerWidth - e.getBoundingClientRect().width) / 2.0 + 10,
+				top: 0,
+				behavior: 'smooth'
+			});
+		}
 	});
 
 	rotations[i] = Math.random() * 30 - 15;
