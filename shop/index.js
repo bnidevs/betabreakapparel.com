@@ -63,8 +63,36 @@ product_polaroids.map((e) => {
 	i++;
 })
 
-product_row.scrollTo({
-	left: product_polaroids[0].getBoundingClientRect().left + product_row.scrollLeft - 50,
-	top: 0,
-	behavior: 'smooth'
-});
+if (window.screen.width >= 500) {
+	product_row.scrollTo({
+		left: product_polaroids[0].getBoundingClientRect().left + product_row.scrollLeft - 50,
+		top: 0,
+		behavior: 'smooth'
+	});
+} else {
+	product_row.scrollBy({
+		left: product_polaroids[0].getBoundingClientRect().left - (window.innerWidth - product_polaroids[0].getBoundingClientRect().width) / 2.0 + 10,
+		top: 0,
+		behavior: 'smooth'
+	});
+}
+
+const cart_container = document.getElementById('cart_container');
+const cart_positions = {
+	ONSCREEN: 'translate(0,0)',
+	OFFSCREEN: 'translate(100%, 0)'
+};
+const cart_close = document.getElementById('cart_close');
+const cart_btn = document.getElementById('cart_btn');
+cart_btn.addEventListener('click', () => {
+		cart_container.style.transform = cart_positions.ONSCREEN;
+		cart_close.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+		cart_close.style.backdropFilter = 'blur(10px)';
+	}
+);
+cart_close.addEventListener('click', () => {
+		cart_container.style.transform = cart_positions.OFFSCREEN;
+		cart_close.style.backgroundColor = 'transparent';
+		cart_close.style.backdropFilter = 'none';
+	}
+);
