@@ -16,6 +16,7 @@ a {
 
 h1 {
 	font-weight: 400;
+	z-index: 100;
 }
 
 .header {
@@ -140,7 +141,7 @@ h1 {
 	height: 100vh;
 	width: 100vw;
 	position: fixed;
-	z-index: 0;
+	z-index: 50;
 	top: 50%;
 	left: 0;
 	transform: translate(0, -50%);
@@ -216,6 +217,7 @@ h1 {
 	width: 4rem;
 	cursor: pointer;
 	justify-self: end;
+	z-index: 100;
 }
 
 #cart_btn:hover, #cart_btn:active {
