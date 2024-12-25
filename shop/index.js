@@ -17,7 +17,7 @@ product_polaroids.map((e) => {
 		}
 
 		selected = e;
-		e.style.zIndex = 100;
+		e.style.zIndex = 150;
 		//product_info.style.opacity = 1;
 
 		let k = 0;
@@ -28,7 +28,7 @@ product_polaroids.map((e) => {
 				[...other.children].map((ec) => {
 					ec.style.transform = `rotate(0deg)`;
 				});
-				other.style.zIndex = 5;
+				other.style.zIndex = 15;
 			}
 			k++;
 		});
