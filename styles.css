@@ -170,6 +170,8 @@ h1 {
 	background-color: white;
 	margin-left: 5vw;
 
+	z-index: 150;
+
 	transition: transform 0.5s ease-in-out;
 
 	grid-column: 1;
@@ -182,6 +184,7 @@ h1 {
 	width: min(81vw, 38.25vh);
 	margin: min(6vw, 2.8333vh) min(6vw, 2.8333vh) 0;
 	overflow-y: hidden;
+	z-index: 150;
 }
 
 .shirt_name {
