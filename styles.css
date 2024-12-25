@@ -141,7 +141,7 @@ h1 {
 	height: 100vh;
 	width: 100vw;
 	position: fixed;
-	z-index: 50;
+	z-index: 0;
 	top: 50%;
 	left: 0;
 	transform: translate(0, -50%);
@@ -386,5 +386,9 @@ h1 {
 
 	#cart_close {
 		justify-content: center;
+	}
+
+	#product_row {
+		top: 55%;
 	}
 }
