@@ -1,6 +1,5 @@
 const product_polaroids = [...document.getElementsByClassName('polaroid_stack')];
 const rotations = [];
-const product_info = document.getElementById('product_info');
 
 const product_row = document.getElementById('product_row');
 
@@ -11,14 +10,26 @@ product_polaroids.map((e) => {
 	e.addEventListener('click', () => {
 
 		if(e === selected){
-			e.insertBefore([...e.children].pop(), e.children[0]);
+			e.insertBefore([...e.children].filter(
+				(c) => c.classList.contains('polaroid_border')
+			).pop(), e.children[0]);
 
 			return;
 		}
 
-		selected = e;
 		e.style.zIndex = 150;
-		//product_info.style.opacity = 1;
+		const active_size_selector = e.getElementsByClassName('size_selector')[0];
+		[...document.getElementsByClassName('size_selector')].map((ss) => {
+			if(ss === active_size_selector) {
+				return;
+			}
+			ss.style.opacity = 0;
+			setTimeout(() => {
+				ss.classList.add('hidden');
+			}, 200)
+		});
+		active_size_selector.classList.remove('hidden');
+		active_size_selector.style.opacity = 1;
 
 		let k = 0;
 		product_polaroids.map((other) => {
@@ -37,7 +48,9 @@ product_polaroids.map((e) => {
 		e.style.transform = `rotate(0deg)`;
 
 		let r = 0;
-		[...e.children].reverse().map((ec) => {
+		[...e.children].filter(
+			(c) => c.classList.contains('polaroid_border')
+		).reverse().map((ec) => {
 			ec.style.transform = `rotate(${r++ * 10}deg)`;
 		});
 
@@ -54,6 +67,8 @@ product_polaroids.map((e) => {
 				behavior: 'smooth'
 			});
 		}
+
+		selected = e;
 	});
 
 	rotations[i] = Math.random() * 30 - 15;
@@ -62,6 +77,25 @@ product_polaroids.map((e) => {
 
 	i++;
 })
+
+// product_row.addEventListener('scroll', () => {
+// 	if(selected === null) {
+// 		return;
+// 	}
+
+// 	let k = 0;
+// 	product_polaroids.map((o) => {
+// 		o.classList.remove('blur');
+// 		o.style.transform = `rotate(${rotations[k]}deg)`;
+// 		[...o.children].map((ec) => {
+// 			ec.style.transform = `rotate(0deg)`;
+// 		});
+// 		o.style.zIndex = 15;
+// 		k++;
+// 	});
+// 	size_selector.style.opacity = 0;
+// 	selected = null;
+// });
 
 if (window.screen.width >= 500) {
 	product_row.scrollTo({
@@ -96,3 +130,20 @@ cart_close.addEventListener('click', () => {
 		cart_close.style.backdropFilter = 'none';
 	}
 );
+
+const size_btns = [...document.getElementsByClassName('size_btn')];
+size_btns.map((b) => {
+	b.addEventListener('click', (e) => {
+		e.stopPropagation();
+		const popcorn = document.createElement('p');
+  		const plus_one_text = document.createTextNode('+1');
+		popcorn.classList.add('plus_one');
+		popcorn.appendChild(plus_one_text);
+		document.body.appendChild(popcorn);
+		popcorn.style.left = `${e.x}px`;
+  		popcorn.style.top = `${e.y - 80}px`;
+  		setTimeout(() => {
+  			popcorn.remove();
+  		}, 1500)
+	});
+});
