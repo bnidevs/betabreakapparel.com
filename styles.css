@@ -233,6 +233,7 @@ h1 {
 	text-align: center;
 	cursor: pointer;
 	width: 6rem;
+	padding: 0;
 }
 
 .size_btn:active {
@@ -402,7 +403,7 @@ h1 {
 
 	.size_selector {
 		top: 55vh;
-		left: calc(50vw + 5px - 50%);
+		left: -5px;
 		flex-direction: row;
 	}
 
