@@ -402,12 +402,12 @@ h1 {
 
 	.size_selector {
 		top: 55vh;
-		left: -6vw;
+		left: calc(50vw + 5px - 50%);
 		flex-direction: row;
 	}
 
 	.size_btn {
 		font-size: 1rem;
-		width: 3rem;
+		width: calc((90vw - 30px) / 6)
 	}
 }
