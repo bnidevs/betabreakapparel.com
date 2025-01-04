@@ -210,7 +210,7 @@ h1 {
 
 .size_selector {
 	position: absolute;
-	left: 45vw;
+	left: calc(41.0833vh + 5vw + 30px);
 	top: 5vh;
 
 	opacity: 0;
@@ -294,6 +294,8 @@ h1 {
 	background-color: rgba(0, 0, 0, 0.3);
 	backdrop-filter: blur(10px);
 	transition: backdrop-filter 0.2s ease-in-out;
+	
+	padding-right: 10px;
 
 	display: flex;
 	justify-content: right;
@@ -301,6 +303,7 @@ h1 {
 }
 
 #cart {
+	position: relative;
 	height: 100vh;
 	width: max(300px, 30vw);
 	background-color: black;
@@ -316,7 +319,18 @@ h1 {
 	justify-content: space-evenly;
 }
 
+#cart_empty {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 #cart_list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	overflow-x: hidden;
 	overflow-y: scroll;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -325,6 +339,93 @@ h1 {
 
 #cart_list::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
+}
+
+.cart_item {
+	display: flex;
+	width: calc(max(300px, 30vw) - 30px);
+	padding: 20px 0;
+}
+
+.cart_item_info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0 5px 5px 1vw;
+}
+
+.cart_item_name {
+	font-size: 1.2em;
+	padding-left: 5px;
+	margin-bottom: -10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.cart_item_size {
+	font-size: 1.2em;
+	padding-left: 5px;
+}
+
+.cart_item_thumb {
+	width: 100px;
+	height: 100px;
+	padding-right: 10px;
+}
+
+.cart_item_quantity {
+	margin: 0 1px 5px;
+}
+
+.cart_item_total {
+	margin-left: 15px;
+}
+
+.cart_item_quantity_btn {
+	background-color: black;
+	font-family: 'Silkscreen';
+	font-size: 1.2em;
+	text-align: center;
+	vertical-align: center;
+	width: 30px;
+	height: 30px;
+	color: white;
+	border: none;
+	outline: 5px solid white;
+	margin: 0 10px 5px;
+}
+
+.cart_item_quantity_btn:active {
+	background-color: white;
+	color: black;
+}
+
+.cart_item_quantity_btn:active svg {
+	filter: invert(100%);
+}
+
+#cart_footer {
+	display: none;
+
+	flex-direction: column;
+	align-items: center;
+
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	transform: translate(-50%, 0);
+}
+
+#checkout_btn {
+	background-color: white;
+	border: none;
+	color: black;
+	font-family: 'Silkscreen';
+	font-size: 2em;
+	text-align: center;
+	padding: 2px 5px 5px;
+	vertical-align: center;
+	margin-top: 10px;
 }
 
 .blur {
@@ -394,6 +495,7 @@ h1 {
 	}
 
 	#cart_close {
+		padding-right: 0px;
 		justify-content: center;
 	}
 
@@ -410,5 +512,9 @@ h1 {
 	.size_btn {
 		font-size: 1rem;
 		width: calc((90vw - 30px) / 6)
+	}
+
+	.cart_item_thumb {
+		padding-right: 0;
 	}
 }
