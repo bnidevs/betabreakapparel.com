@@ -388,6 +388,7 @@ h1 {
 	color: white;
 	border: 5px solid white;
 	margin: 0 10px 5px;
+	padding: 3px;
 }
 
 .cart_item_quantity_btn:active {
