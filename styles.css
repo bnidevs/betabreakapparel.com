@@ -505,7 +505,7 @@ h1 {
 	}
 
 	.size_selector {
-		left: 10px;
+		left: -25px;
 		top: auto;
 		bottom: -30px;
 		flex-direction: row;
