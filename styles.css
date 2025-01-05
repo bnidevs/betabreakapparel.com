@@ -383,15 +383,10 @@ h1 {
 
 .cart_item_quantity_btn {
 	background-color: black;
-	font-family: 'Silkscreen';
-	font-size: 1.2em;
-	text-align: center;
-	vertical-align: center;
-	width: 30px;
-	height: 30px;
+	width: 35px;
+	height: 35px;
 	color: white;
-	border: none;
-	outline: 5px solid white;
+	border: 5px solid white;
 	margin: 0 10px 5px;
 }
 
