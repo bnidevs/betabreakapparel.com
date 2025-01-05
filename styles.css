@@ -192,6 +192,22 @@ h1 {
 	z-index: 150;
 }
 
+.spillover {
+	overflow: visible;
+}
+
+.sizing_note {
+	background-color: lightyellow;
+}
+
+.sizing_note_text {
+	color: black;
+	font-family: 'Permanent Marker';
+	font-size: 2.5em;
+
+	transform: rotate(-45deg) translate(calc(-1 * min(15vw, 10.979vh)), min(20vw, 10.979vh));
+}
+
 .shirt_name {
 	font-family: "Lacquer", system-ui;
 	font-size: 2em;
@@ -473,6 +489,10 @@ h1 {
 	transform: translate(-50%, -50%);
 }
 
+.white_out {
+	color: transparent;
+}
+
 @keyframes animate_text {
     from {
       	transform: translate3d(0, 0, 0);
@@ -505,10 +525,9 @@ h1 {
 	}
 
 	.size_selector {
-		left: 45vw;
+		left: calc(25px - 5vw);
 		top: auto;
 		bottom: -30px;
-		transform: translate(-50%, 0);
 		flex-direction: row;
 	}
 

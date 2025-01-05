@@ -1,5 +1,3 @@
-
-
 const add_visual_elements = () => {
 	const product_polaroids = [...document.getElementsByClassName('polaroid_stack')];
 	const rotations = [];
@@ -232,6 +230,7 @@ const get_product_gql = (product_id) => `
 query Product {
     product(id: "${product_id}") {
         title
+		description
         media(first: 3) {
             nodes {
                 ... on MediaImage {
@@ -397,7 +396,23 @@ const add_product = (product_data) => {
 	const ps = document.createElement('div');
 	ps.classList.add('polaroid_stack');
 
-	ps.innerHTML = product_data['media']['nodes'].map((img) => `
+	const sizing_note = product_data['description'];
+	if(product_data['description'] !== '') {
+		ps.innerHTML = `
+			<div class="sizing_note polaroid_border">
+				<div class="polaroid spillover">
+					<div class="sizing_note_text">
+						${sizing_note}
+					</div>
+				</div>
+				<span class="shirt_name white_out">
+					${product_data['title']}
+				</span>
+			</div>
+		`
+	}
+
+	ps.innerHTML += product_data['media']['nodes'].map((img) => `
 		<div class="polaroid_border">
 			<img class="polaroid" src="${img['image']['src']}" />
 			<span class="shirt_name">
