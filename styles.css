@@ -413,7 +413,7 @@ h1 {
 
 	position: absolute;
 	left: 50%;
-	bottom: 20px;
+	bottom: calc(20px + env(safe-area-inset-bottom));
 	transform: translate(-50%, 0);
 }
 
@@ -424,7 +424,7 @@ h1 {
 	font-family: 'Silkscreen';
 	font-size: 2em;
 	text-align: center;
-	padding: 2px 5px calc(5px + env(safe-area-inset-bottom));
+	padding: 2px 5px 5px;
 	vertical-align: center;
 	margin-top: 10px;
 }
@@ -505,9 +505,10 @@ h1 {
 	}
 
 	.size_selector {
-		left: -25px;
+		left: 45vw;
 		top: auto;
 		bottom: -30px;
+		transform: translate(-50%, 0);
 		flex-direction: row;
 	}
 
