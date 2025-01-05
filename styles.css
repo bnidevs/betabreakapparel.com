@@ -375,14 +375,14 @@ h1 {
 
 .cart_item_quantity {
 	margin: 0 1px 5px;
-	width: 10px;
+	width: 25px;
 	text-align: center;
 	overflow: hidden;
 	text-wrap: nowrap;
 }
 
 .cart_item_total {
-	margin-left: 15px;
+	margin-left: 5px;
 }
 
 .cart_item_quantity_btn {
@@ -391,7 +391,7 @@ h1 {
 	height: 35px;
 	color: white;
 	border: 5px solid white;
-	margin: 0 10px 5px;
+	margin: 0 5px 5px;
 	padding: 3px;
 }
 
@@ -504,8 +504,9 @@ h1 {
 	}
 
 	.size_selector {
-		top: 55vh;
-		left: -5px;
+		position: relative;
+		top: 0;
+		left: 10px;
 		flex-direction: row;
 	}
 
