@@ -173,6 +173,7 @@ h1 {
 	align-items: center;
 	background-color: white;
 	margin-left: 5vw;
+	max-width: min(93vw, 43.9166vh);
 
 	z-index: 150;
 
