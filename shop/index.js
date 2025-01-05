@@ -170,6 +170,7 @@ const cart_empty_text = document.getElementById('cart_empty');
 const cart_footer = document.getElementById('cart_footer');
 const update_cart_visual = (lines) => {
 	if(lines.length == 0) {
+		cart_list.innerHTML = '';
 		cart_empty_text.style.display = 'block';
 		cart_footer.style.display = 'none';
 		return;
