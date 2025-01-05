@@ -413,7 +413,7 @@ h1 {
 
 	position: absolute;
 	left: 50%;
-	bottom: calc(20px + env(safe-area-inset-bottom));
+	top: 87svh;
 	transform: translate(-50%, 0);
 }
 
