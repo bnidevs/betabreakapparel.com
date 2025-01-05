@@ -375,6 +375,10 @@ h1 {
 
 .cart_item_quantity {
 	margin: 0 1px 5px;
+	width: 10px;
+	text-align: center;
+	overflow: hidden;
+	text-wrap: nowrap;
 }
 
 .cart_item_total {
