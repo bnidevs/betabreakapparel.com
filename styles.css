@@ -424,7 +424,7 @@ h1 {
 	font-family: 'Silkscreen';
 	font-size: 2em;
 	text-align: center;
-	padding: 2px 5px 5px;
+	padding: 2px 5px calc(5px + env(safe-area-inset-bottom));
 	vertical-align: center;
 	margin-top: 10px;
 }
