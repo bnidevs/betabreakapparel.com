@@ -203,9 +203,9 @@ h1 {
 .sizing_note_text {
 	color: black;
 	font-family: 'Permanent Marker';
-	font-size: 2.5em;
+	font-size: 2em;
 
-	transform: rotate(-45deg) translate(calc(-1 * min(15vw, 10.979vh)), min(20vw, 10.979vh));
+	transform: rotate(-45deg) translate(-10.979vh, 10.979vh);
 }
 
 .shirt_name {
@@ -529,6 +529,10 @@ h1 {
 		top: auto;
 		bottom: -30px;
 		flex-direction: row;
+	}
+
+	.sizing_note_text {
+		transform: rotate(-45deg) translate(-25vw, 10.979vh);
 	}
 
 	.size_btn {

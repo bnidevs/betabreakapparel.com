@@ -41,6 +41,12 @@ const add_visual_elements = () => {
 						ec.style.transform = `rotate(0deg)`;
 					});
 
+					while(!other.children[0].classList.contains('stack_bottom')){
+						other.insertBefore([...other.children].filter(
+							(c) => c.classList.contains('polaroid_border')
+						).pop(), other.children[0]);
+					}
+
 					other.style.zIndex = 15;
 				}
 				k++;
@@ -398,20 +404,20 @@ const add_product = (product_data) => {
 	ps.classList.add('polaroid_stack');
 
 	const sizing_note = product_data['description'];
-	// if(product_data['description'] !== '') {
-	// 	ps.innerHTML = `
-	// 		<div class="sizing_note polaroid_border">
-	// 			<div class="polaroid spillover">
-	// 				<div class="sizing_note_text">
-	// 					${sizing_note}
-	// 				</div>
-	// 			</div>
-	// 			<span class="shirt_name white_out">
-	// 				${product_data['title']}
-	// 			</span>
-	// 		</div>
-	// 	`
-	// }
+	if(product_data['description'] !== '') {
+		ps.innerHTML = `
+			<div class="sizing_note polaroid_border stack_bottom">
+				<div class="polaroid spillover">
+					<div class="sizing_note_text">
+						${sizing_note}
+					</div>
+				</div>
+				<span class="shirt_name white_out">
+					${product_data['title']}
+				</span>
+			</div>
+		`
+	}
 
 	ps.innerHTML += product_data['media']['nodes'].map((img) => `
 		<div class="polaroid_border">
