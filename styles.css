@@ -200,12 +200,22 @@ h1 {
 	background-color: lightyellow;
 }
 
+.sizing_note_text_placeholder {
+	color: transparent;
+	font-family: 'Permanent Marker';
+	font-size: 2em;
+}
+
 .sizing_note_text {
 	color: black;
 	font-family: 'Permanent Marker';
 	font-size: 2em;
 
-	transform: rotate(-45deg) translate(-10.979vh, 10.979vh);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform-origin: center;
+	transform: translate(-50%, -50%) rotate(-40deg);
 }
 
 .shirt_name {
@@ -529,10 +539,6 @@ h1 {
 		top: auto;
 		bottom: -30px;
 		flex-direction: row;
-	}
-
-	.sizing_note_text {
-		transform: rotate(-45deg) translate(-25vw, 10.979vh);
 	}
 
 	.size_btn {

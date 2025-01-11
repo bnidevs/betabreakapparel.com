@@ -408,13 +408,16 @@ const add_product = (product_data) => {
 		ps.innerHTML = `
 			<div class="sizing_note polaroid_border stack_bottom">
 				<div class="polaroid spillover">
-					<div class="sizing_note_text">
+					<div class="sizing_note_text_placeholder">
 						${sizing_note}
 					</div>
 				</div>
 				<span class="shirt_name white_out">
 					${product_data['title']}
 				</span>
+				<div class="sizing_note_text">
+					${sizing_note}
+				</div>
 			</div>
 		`
 	}
