@@ -516,9 +516,10 @@ h1 {
 	}
 
 	.size_selector {
-		left: calc(25px - 5vw);
+		left: 50%;
 		top: auto;
 		bottom: -30px;
+		transform: translate(-50%, 0);
 		flex-direction: row;
 	}
 
