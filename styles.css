@@ -519,7 +519,7 @@ h1 {
 		left: 50%;
 		top: auto;
 		bottom: -30px;
-		transform: translate(-50%, 0);
+		transform: translate(calc(-50% - 2.5vw), 0);
 		flex-direction: row;
 	}
 
