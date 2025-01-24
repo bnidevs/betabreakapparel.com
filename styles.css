@@ -204,6 +204,7 @@ h1 {
 	color: transparent;
 	font-family: 'Permanent Marker';
 	font-size: 2em;
+	user-select: none;
 }
 
 .sizing_note_text {
@@ -500,6 +501,7 @@ h1 {
 }
 
 .white_out {
+	user-select: none;
 	color: transparent;
 }
 
