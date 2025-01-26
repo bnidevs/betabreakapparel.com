@@ -221,7 +221,7 @@ h1 {
 
 .shirt_name {
 	font-family: "Silkscreen";
-	font-size: 2em;
+	font-size: 1.7em;
 	color: black;
 	margin: 20px;
 }
@@ -288,11 +288,16 @@ h1 {
 	pointer-events: none;
 }
 
+#cart_btn_counter {
+	color: white;
+	font-family: "Silkscreen", sans-serif;
+	font-size: 2em;
+}
+
 #cart_btn {
 	background-color: transparent;
 	border: none;
 	height: 3rem;
-	width: 4rem;
 	cursor: pointer;
 	justify-self: end;
 	z-index: 100;

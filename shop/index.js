@@ -152,6 +152,7 @@ const storefront_url = 'https://betabreakapparel.myshopify.com/api/2024-10/graph
 let cart_id = window.localStorage.getItem('cartid');
 let checkout_url = '';
 let subtotal = 0;
+let item_count = 0;
 
 const wrap_gql = (query) => {
 	return {
@@ -173,9 +174,11 @@ const cart_subtotal = document.getElementById('cart_subtotal');
 const checkout_link = document.getElementById('checkout_link');
 const cart_empty_text = document.getElementById('cart_empty');
 const cart_footer = document.getElementById('cart_footer');
+const cart_counter = document.getElementById('cart_btn_counter');
 const update_cart_visual = (lines) => {
 	if(lines.length == 0) {
 		cart_list.innerHTML = '';
+		cart_counter.innerText = '';
 		cart_empty_text.style.display = 'block';
 		cart_footer.style.display = 'none';
 		return;
@@ -185,6 +188,7 @@ const update_cart_visual = (lines) => {
 	cart_footer.style.display = 'flex';
 
 	cart_list.innerHTML = '';
+	cart_counter.innerText = item_count.toString();
 
 	lines.map((item) => {
 		cart_list.innerHTML += `
@@ -269,6 +273,7 @@ mutation CartLinesAdd {
         cart {
             checkoutUrl
             id
+			totalQuantity
             cost {
                 subtotalAmount {
                     amount
@@ -314,6 +319,7 @@ mutation CartLinesUpdate {
     	cart {
 	        id
 	        checkoutUrl
+			totalQuantity
 	        cost {
 	            subtotalAmount {
 	                amount
@@ -369,6 +375,7 @@ const increment_item = (e) => {
 	    	cart_id = data['id'];
 			checkout_url = data['checkoutUrl'];
 	    	subtotal = data['cost']['subtotalAmount']['amount'];
+	    	item_count = data['totalQuantity'];
 	    	update_cart_visual(data['lines']['nodes']);
 	    });
 }
@@ -390,6 +397,7 @@ const link_buttons_to_items = () => {
 			    	cart_id = data['id'];
 	    			checkout_url = data['checkoutUrl'];
 	    			subtotal = data['cost']['subtotalAmount']['amount'];
+	    			item_count = data['totalQuantity'];
 			    	update_cart_visual(data['lines']['nodes']);
 			    });
 		});
@@ -482,6 +490,7 @@ query Cart {
     ) {
         id
         checkoutUrl
+		totalQuantity
         cost {
             subtotalAmount {
                 amount
@@ -536,5 +545,6 @@ fetch(storefront_url, wrap_gql(get_cart_gql))
     	cart_id = data['id'];
     	checkout_url = data['checkoutUrl'];
 	    subtotal = data['cost']['subtotalAmount']['amount'];
+	    item_count = data['totalQuantity'];
     	update_cart_visual(data['lines']['nodes']);
     });
