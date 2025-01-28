@@ -145,6 +145,7 @@ const available_products = [
 	'gid://shopify/Product/8888929878264', // beta breaker
 	'gid://shopify/Product/8888930042104', // sloth
 	'gid://shopify/Product/8888932073720', // send train
+	'gid://shopify/Product/8933142397176', // got chalk
 ];
 
 const storefront_public_token = '01386fc29bc8aff76b8d48e7d3db84e5';
