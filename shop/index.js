@@ -246,6 +246,7 @@ query Product {
     product(id: "${product_id}") {
         title
 		description
+		productType
         media(first: 3) {
             nodes {
                 ... on MediaImage {
@@ -259,6 +260,7 @@ query Product {
             nodes {
                 title
                 id
+                currentlyNotInStock
             }
         }
     }
@@ -408,6 +410,12 @@ const link_buttons_to_items = () => {
 	});
 }
 
+const type_to_edition_map = {
+	'Holographic Edition': 'holographic',
+	'Artist Edition': 'artist',
+	'Blank Edition': 'blank'
+}
+
 const add_product = (product_data) => {
 	const b = document.getElementById('product_insertion');
 	const p = b.parentNode;
@@ -434,19 +442,30 @@ const add_product = (product_data) => {
 		`
 	}
 
+	let edition_text = '';
+	const productType = product_data['productType'];
+	if(productType !== '') {
+		edition_text = `
+			<span class="shirt_edition ${type_to_edition_map[productType]}">
+				${productType}
+			</span>
+		`
+	}
+
 	ps.innerHTML += product_data['media']['nodes'].map((img) => `
 		<div class="polaroid_border">
 			<img class="polaroid" src="${img['image']['src']}" />
-			<span class="shirt_name">
+			<span class="shirt_name ${productType === '' ? 'shirt_name_default_margin' : 'shirt_name_with_edition'}">
 				${product_data['title']}
 			</span>
+			${edition_text}
 		</div>
 	`).join('');
 
 	ps.innerHTML += `
 		<div class="size_selector hidden">
 	` + 
-	product_data['variants']['nodes'].map((variant) => `
+	product_data['variants']['nodes'].map((variant) => variant['currentlyNotInStock'] ? '' : `
 		<button type="button" class="size_btn" variant_id="${variant['id']}">
 			${variant['title']}
 		</button>

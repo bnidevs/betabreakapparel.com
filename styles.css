@@ -223,7 +223,28 @@ h1 {
 	font-family: "Silkscreen";
 	font-size: 1.7em;
 	color: black;
+}
+
+.shirt_name_default_margin {
 	margin: 20px;
+}
+
+.shirt_name_with_edition {
+	margin: 15px 20px 0;
+}
+
+.shirt_edition {
+	padding: 0;
+	margin: -5px 0 10px;
+	font-size: 1em;
+	color: black;
+}
+
+.holographic {
+	background: linear-gradient(45deg, rgba(167,74,255,1) 0%, rgba(162,219,255,1) 30%, rgba(218,241,255,1) 50%, rgba(162,219,255,1) 70%, rgba(167,74,255,1) 100%);
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
 }
 
 .front_product_row_spacer {
