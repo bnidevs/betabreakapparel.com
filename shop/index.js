@@ -148,6 +148,7 @@ const available_products = [
 	'gid://shopify/Product/8933142397176', // got chalk
 	'gid://shopify/Product/8936088862968', // hold tight
 	'gid://shopify/Product/8936172060920', // ascension
+	'gid://shopify/Product/8896115704056', // low grav holo
 ];
 
 const storefront_public_token = '01386fc29bc8aff76b8d48e7d3db84e5';
