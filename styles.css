@@ -139,6 +139,20 @@ h1 {
 	transition: opacity 2s ease-in-out;
 }
 
+#shop_announcement {
+	position: fixed;
+	height: 100vh;
+	left: 0;
+	padding: 5px;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	text-align: center;
+	top: 50%;
+	transform: translate(0, -50%) rotate(180deg);
+	background-color: black;
+	z-index: 200;
+}
+
 #product_row {
 	display: flex;
 	align-items: center;
@@ -245,6 +259,11 @@ h1 {
 	color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
+}
+
+.blank {
+	color: white;
+  	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .front_product_row_spacer {
