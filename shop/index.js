@@ -260,7 +260,7 @@ query Product {
             nodes {
                 title
                 id
-                quantityAvailable
+                availableForSale
             }
         }
     }
@@ -465,7 +465,7 @@ const add_product = (product_data) => {
 	ps.innerHTML += `
 		<div class="size_selector hidden">
 	` + 
-	product_data['variants']['nodes'].map((variant) => variant['quantityAvailable'] === 0 ? '' : `
+	product_data['variants']['nodes'].map((variant) => !variant['availableForSale'] ? '' : `
 		<button type="button" class="size_btn" variant_id="${variant['id']}">
 			${variant['title']}
 		</button>
