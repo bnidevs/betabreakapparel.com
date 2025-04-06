@@ -415,7 +415,7 @@ const link_buttons_to_items = () => {
 const type_to_edition_map = {
 	'Holographic Edition': 'holographic',
 	'Artist Edition': 'artist',
-	'Blank Edition': 'blank'
+	'Blank Series': 'blank'
 }
 
 const add_product = (product_data) => {
