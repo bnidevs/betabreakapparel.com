@@ -563,9 +563,16 @@ h1 {
 
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	z-index: 0;
+}
+
+.team_container.polaroid_stack {
+	z-index: 0;
 }
 
 .team_polaroid_border {
+	height: fit-content;
 	margin: 0 20px 0 0 !important;
 }
 
@@ -636,6 +643,7 @@ h1 {
 		flex-direction: column;
 
 		width: min(87vw, 41.0833vh);
+		overflow-y: scroll;
 	}
 
 	.team_polaroid_border {
