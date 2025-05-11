@@ -424,6 +424,7 @@ const add_product = (product_data) => {
 
 	const ps = document.createElement('div');
 	ps.classList.add('polaroid_stack');
+	ps.classList.add('clickable');
 
 	const sizing_note = product_data['description'];
 	if(product_data['description'] !== '') {
