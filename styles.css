@@ -640,10 +640,16 @@ h1 {
 	}
 
 	.team_container {
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
 		flex-direction: column;
 
-		width: min(87vw, 41.0833vh);
+		width: 80vw;
+		margin-top: 25vh;
 		overflow-y: scroll;
+		overflow-x: hidden;
+		height: 65vh;
 	}
 
 	.team_polaroid_border {
