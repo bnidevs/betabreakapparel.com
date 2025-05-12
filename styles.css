@@ -584,7 +584,9 @@ h1 {
 }
 
 .team_insta {
-	text-decoration: underline 2px;
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-decoration-color: white;
 	text-underline-offset: 5px;
 }
 
