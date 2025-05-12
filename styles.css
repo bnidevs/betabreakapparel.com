@@ -645,7 +645,7 @@ h1 {
 		transform: translate(-50%, 0);
 		flex-direction: column;
 
-		width: 80vw;
+		width: 90vw;
 		margin-top: 25vh;
 		overflow-y: scroll;
 		overflow-x: hidden;
@@ -658,7 +658,8 @@ h1 {
 
 	.bio {
 		text-align: justify;
-		padding-bottom: 30vh;
+		padding-bottom: 10vh;
+		width: 80vw;
 	}
 
 }
