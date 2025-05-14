@@ -4,7 +4,10 @@ const team = {
 	'Jake': 'jake',
 	'Nick': 'nick',
 	'Leta': 'leta',
-	'Jas': 'jas'
+	'Jas': 'jas',
+	'Milly': 'milly',
+	'Bill': 'bill',
+	'Danny': 'danny'
 }
 
 const names = Object.keys(team)
