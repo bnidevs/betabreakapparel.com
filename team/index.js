@@ -7,7 +7,8 @@ const team = {
 	'Jas': 'jas',
 	'Milly': 'milly',
 	'Bill': 'bill',
-	'Danny': 'danny'
+	'Danny': 'danny',
+	'Suhvin': 'suhvin'
 }
 
 const names = Object.keys(team)
