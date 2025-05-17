@@ -49,6 +49,11 @@ const add_visual_elements = () => {
 
 	const product_row = document.getElementById('product_row');
 
+	product_row.addEventListener("wheel", (e)=>{
+		e.preventDefault();
+		product_row.scrollLeft += e.deltaY;
+	})
+
 	product_polaroids.map((e) => {
 		e.style.transform = `rotate(${Math.random() * 30 - 15}deg)`;
 	});
