@@ -4,6 +4,11 @@ const add_visual_elements = () => {
 
 	const product_row = document.getElementById('product_row');
 
+	product_row.addEventListener("wheel", (e)=>{
+		e.preventDefault();
+		product_row.scrollLeft += e.deltaY;
+	})
+
 	let selected = null;
 
 	let i = 0;
