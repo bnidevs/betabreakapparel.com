@@ -645,6 +645,10 @@ h1 {
 		padding-right: 0;
 	}
 
+	.team_position {
+		font-size: 1em;
+	}
+
 	.team_container {
 		top: 0;
 		left: 50%;
