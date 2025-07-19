@@ -6,7 +6,7 @@ const add_visual_elements = () => {
 
 	product_row.addEventListener("wheel", (e)=>{
 		e.preventDefault();
-		product_row.scrollLeft += e.deltaY;
+		product_row.scrollLeft += e.deltaY + e.deltaX;
 	})
 
 	let selected = null;
