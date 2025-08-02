@@ -157,6 +157,7 @@ const available_products = [
 	'gid://shopify/Product/9024132776184', // quickdraw
 	'gid://shopify/Product/9024137789688', // flowy
 	'gid://shopify/Product/9148256125176', // mantas
+	'gid://shopify/Product/9162778509560', // wings
 ];
 
 const storefront_public_token = '01386fc29bc8aff76b8d48e7d3db84e5';
