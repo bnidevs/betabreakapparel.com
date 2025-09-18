@@ -159,6 +159,7 @@ const available_products = [
 	'gid://shopify/Product/9148256125176', // mantas
 	'gid://shopify/Product/9162778509560', // wings
 	'gid://shopify/Product/9213419094264', // glitch
+	'gid://shopify/Product/9221323194616', // butterfly
 ];
 
 const storefront_public_token = '01386fc29bc8aff76b8d48e7d3db84e5';
